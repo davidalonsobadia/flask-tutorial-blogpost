@@ -19,5 +19,7 @@ EXPOSE 5000
 # Set the environment variable to indicate production mode
 ENV FLASK_ENV=production
 
+RUN chmod +x ./start.sh
+
 # Set the entrypoint command to run the Flask app using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
+CMD ["./start.sh"]
